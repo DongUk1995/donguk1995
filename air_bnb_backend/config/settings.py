@@ -27,7 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-CUSTOM_APPS = ["houses.apps.HousesConfig", "users.apps.UsersConfig"]
+CUSTOM_APPS = [
+    "houses.apps.HousesConfig",
+    "users.apps.UsersConfig",
+]
 # Application definition
 
 SYSTEM_APPS = [
