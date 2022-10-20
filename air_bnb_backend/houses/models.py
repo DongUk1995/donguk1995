@@ -18,6 +18,7 @@ class House(models.Model):
         default=True,
         help_text="DOes this house allow pets?",
     )
+    owner = models.ForeignKey("users.User", on_delete=models.CASCADE)  ##데이터 타입
 
     def __str__(self):
         return self.name  ##str 메서드를 설정하는 것
