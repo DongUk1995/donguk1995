@@ -1,5 +1,6 @@
 from email.policy import default
 from enum import auto
+from functools import total_ordering
 from pydoc import describe
 from random import choices
 from django.db import models
@@ -64,6 +65,16 @@ class Room(CommonModel):
 
     def total_amenities(self):
         return self.amenities.count()
+
+    def rating(room):
+        count = room.reviews.count()  # 리뷰 숫자 count
+        if count == 0:
+            return "No Reviews"
+        else:
+            total_rating = 0
+            for review in room.reviews.all().values("rating"):
+                total_rating += review["rating"]
+            return round(total_rating / count, 2)
 
 
 class Amenity(CommonModel):
