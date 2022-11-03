@@ -11,7 +11,10 @@ def categories(request):
         serializer = CategorySerializer(all_categories, many=True)
         return Response(serializer.data)
     elif request.method == "POST":
-        print(request.data)
+        Category.objects.create(
+            name=request.data["name"],
+            kind=request.data["kind"],
+        )
         return Response({"created": True})
 
 
