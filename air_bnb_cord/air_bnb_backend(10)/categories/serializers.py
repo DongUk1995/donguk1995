@@ -12,3 +12,6 @@ class CategorySerializer(serializers.Serializer):
         choices=Category.CategoryKindChoices.choices,
     )
     created_at = serializers.DateTimeField(read_only=True)
+
+    def create(self, validated_data):
+        return Category.objects.create(**validated_data)
