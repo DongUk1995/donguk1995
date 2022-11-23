@@ -5,7 +5,7 @@ from . import views
 urlpatterns = [
     path(
         "",
-        views.Catego9ryViewSet.as_view(
+        views.CategoryViewSet.as_view(
             {
                 "get": "list",
                 "post": "create",
