@@ -62,6 +62,15 @@ class Rooms(APIView):
         serializer = RoomListSerializer(all_rooms, many=True)
         return Response(serializer.data)
 
+    def post(self, request):
+        serializer = RoomDetailSerializer(data=request.data)
+        if serializer.is_valid():
+            room = serializer.save()
+            serializer = RoomDetailSerializer(room)
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors)
+
 
 class RoomDetail(APIView):
     def get_object(self, pk):
@@ -74,3 +83,19 @@ class RoomDetail(APIView):
         room = self.get_object(pk)
         serializer = RoomDetailSerializer(room)
         return Response(serializer.data)
+
+
+#     {
+#     "name": "House created with DRF",
+#     "country": "한국",
+#     "city": "서울",
+#     "price": 1000,
+#     "rooms": 2,
+#     "toilets": 2,
+#     "category": {"name":"lalalalla", "kind":"rooms"},
+#     "amenities": [{"name":"laalalla", "description":"flflsl"}],
+#     "description": "DRF is great",
+#     "address": "Seoul 123",
+#     "pet_friendly": true,
+#     "kind": "private_room"
+# } 메모장
