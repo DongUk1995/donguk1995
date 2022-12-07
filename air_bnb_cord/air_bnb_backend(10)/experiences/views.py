@@ -35,7 +35,11 @@ class PerkDetail(APIView):
 
     def put(self, request, pk):
         perk = self.get_object(pk)
-        serializer = PerkSerializer(perk, data=request.data, partial=True)
+        serializer = PerkSerializer(
+            perk,
+            data=request.data,
+            partial=True,
+        )
         if serializer.is_valid():
             updated_park = serializer.save()
             return Response(
