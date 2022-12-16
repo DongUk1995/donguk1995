@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "air-bnb-project"
+version = "0.1.0"
+description = ""
+authors = ["김동욱 <105752138+DongUk1995@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "air_bnb_project"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^4.1.4"
+beautifulsoup4 = "^4.11.1"
+
+
+[tool.poetry.group.dev.dependencies]
+black = {version = "^22.12.0", allow-prereleases = true}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
