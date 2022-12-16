@@ -244,3 +244,6 @@ class RoomPhotos(APIView):
             return Response(serializer.data)
         else:
             return Response(serializer.erros)
+
+
+##DFSRFRWEREWREWRWERWERWERWEekflqwkr'welr'welr'welr'wer'welr'wr
