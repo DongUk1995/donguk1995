@@ -11,6 +11,7 @@ packages = [{include = "air_bnb_project"}]
 python = "^3.11"
 django = "^4.1.4"
 beautifulsoup4 = "^4.11.1"
+djangorestframework = "^3.14.0"
 
 
 [tool.poetry.group.dev.dependencies]
