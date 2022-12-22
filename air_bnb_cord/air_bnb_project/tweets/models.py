@@ -4,7 +4,7 @@ from common.models import CommonModel
 
 class Tweet(CommonModel):
 
-    payload = models.TextField(
+    payload = models.CharField(
         max_length=180,
     )
 
