@@ -1,7 +1,7 @@
 from django.urls import path
-from . import views
+from .views import tweeters, tweeter
 
 urlpatterns = [
-    path("", views.tweeters),
-    path("users/<int:pk>/tweets", views.tweeter),
+    path("", tweeters.as_view()),
+    path("users/<int:pk>/tweets", tweeter.as_view()),
 ]
